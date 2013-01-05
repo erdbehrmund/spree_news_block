@@ -1,0 +1,11 @@
+<% content_for :head do -%>
+    <meta name="title" content="<%=@item.title%>">
+<% end %>
+
+<div id="news_header">
+  <div id="news_title"><h1><%= @item.title %></h1></div>
+  <div id="news_date"><%= @item.created_at %></div>
+</div>
+<div id="news_content">
+  <%= raw @item.body %>
+</div>

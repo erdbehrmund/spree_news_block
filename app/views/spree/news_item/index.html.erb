@@ -1,0 +1,12 @@
+<% content_for :head do -%>
+    <meta name="title" content="<%= t('news_items.news') %>">
+<% end %>
+
+<% @news_items.each do |item| %>
+    <div>
+      <%= item.title %>
+    </div>
+    <hr />
+<% end %>
+
+<%= paginate @news_items %>

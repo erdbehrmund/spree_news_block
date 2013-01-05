@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="alpha sixteen omega columns">
+    <%= f.field_container :title do %>
+        <%= f.label :title %> <span class="required">*</span><br />
+        <%= f.text_field :title, :class => 'fullwidth title' %>
+        <%= f.error_message_on :title %>
+    <% end %>
+
+    <%= f.field_container :body do %>
+        <%= f.label :body %><span class="required">*</span><br />
+        <%= f.text_area :body, {:class => 'fullwidth'} %>
+        <%= f.error_message_on :body %>
+    <% end %>
+
+    <ul>
+      <li>
+        <%= f.check_box :active %>
+        <%= f.label :active %>
+      </li>
+    </ul>
+  </div>
+</div>

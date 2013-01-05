@@ -1,0 +1,14 @@
+<% content_for :page_title do %>
+    <%= t("news_items.news") %> <i class="icon-arrow-right"></i> <%= t("news_items.submit_news") %>
+<% end %>
+
+<% content_for :page_actions do %>
+    <li><%= button_link_to t('news_items.back_to_news'), spree.admin_news_items_url, :icon => 'icon-arrow-left' %></li>
+<% end %>
+
+<%= render "spree/shared/error_messages", :target => @page %>
+
+<%= form_for [:admin, @news_item] do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+<% end %>

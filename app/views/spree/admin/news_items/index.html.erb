@@ -1,0 +1,42 @@
+<% content_for :page_actions do %>
+    <li><%= button_link_to t("news_items.submit_news"), new_object_url, :icon => 'icon-plus' %></li>
+<% end %>
+
+<% content_for :page_title do %>
+    <%= t("news_items.news") %>
+<% end %>
+
+<table class="index">
+  <colgroup>
+    <col style="width: 40%" />
+    <col style="width: 40%" />
+    <col style="width: 10%" />
+    <col style="width: 10%" />
+  </colgroup>
+  <thead>
+  <tr>
+    <th><%= Spree::Page.human_attribute_name(:title) %></th>
+    <th><%= Spree::Page.human_attribute_name(:visible) %></th>
+    <th class="actions"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @news_items.each do |item| %>
+      <tr class="<%= cycle('odd', 'even') %>" id="<%= dom_id item %>">
+        <td>
+          <%= link_to item.title, news_item_path(item) %>
+        </td>
+        <td class="align-center">
+          <%= content_tag(:i, '', :class => 'icon-ok green') if item.active %>
+        </td>
+        <td  class="actions">
+          <%= link_to_edit item, :no_text => true %>
+          <%= link_to_delete item, :no_text => true %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @news_items %>
