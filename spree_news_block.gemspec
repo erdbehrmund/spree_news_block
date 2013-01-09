@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_news_block'
-  s.version     = '1.3.0.2'
+  s.version     = '1.3.0.3'
   s.summary     = 'News posting support for Spree applications'
   s.description = ''
   s.required_ruby_version = '>= 1.8.7'
